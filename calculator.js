@@ -84,7 +84,7 @@ operators.forEach(operator => operator.addEventListener('click', event => {
      {
         if (event.target.textContent == '=') return;
 
-        if (event.target.textContent == '-') 
+        if (event.target.textContent == '-' && displayBottom.textContent == '0') 
         {
             displayBottom.textContent = '-' ;
             return;
