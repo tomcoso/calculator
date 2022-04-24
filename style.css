@@ -1,5 +1,13 @@
+:root {
+    --tea-green: hsl(78, 64%, 83%);
+    --blue: hsl(190, 87%, 25%);
+    --dark: hsl(344, 44%, 15%);
+    --bg-accent: hsl(21, 86%, 69%);
+    --orange: hsl(16, 89%, 47%);
+}
 html {
     font-family: monospace;
+    background-color: var(--bg-accent);
 }
 #main-container {
     display: flex;
@@ -13,57 +21,88 @@ html {
     display: flex;
     flex-direction: column;
     padding: 1em;
-    background-color: blueviolet;
+    background-color: var(--blue);
     width: 20em;
     height: 100%;
     gap: 1em;
+    border-left: var(--blue);
     border-radius: 1em;
+    box-shadow: -1px 2px 5px 1px var(--dark),
+        inset 1px -1px 3px 1px var(--dark);
 }
 
 #screen {
     width: 99%;
-    border: 2px solid red;
+    border: 2px solid var(--dark);
     height: 7em;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
     border-radius: 1em;
+    background-color: var(--tea-green);
+    box-shadow: 0px 2px 1px 1px var(--dark);
 }
 
 .display {
     flex: 1 1 auto;
     height: 25%;
-    border: 1px solid black;
+    font-size: 1.25em;
+    text-align: right;
+    padding: .5em;
+    color: var(--dark)
 }
 .display.bottom {
     height: 50%;
+    font-size: 2em;
 }
 
 .btnrow {
     display: flex;
     justify-content: space-between;
     gap: .75em;
-    border: 2px solid red;
 }
 
-.btnrow button {
+button {
     flex: 1 2 auto;
     width: 25%;
     padding: .5em;
-    background-color: aqua;
+    background-color: var(--tea-green);
     border-radius: .5em;
     font-size: 1.75rem;
     text-align: center;
     font-family: monospace;
     border: none;
+    box-shadow: -1px 2px 1px 1px var(--dark);
+    color: var(--dark);
 }
 
+.special {
+    background-color: var(--bg-accent);
+}
 .special.delete {
     width: 48.5%;
     flex: 0 0 auto;
 }
 
+.operator {
+    background-color: var(--orange);
+}
 .operator.equal {
     width: 48.5%;
     flex: 0 0 auto;
+    background-color: var(--bg-accent);
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    color: var(--tea-green);
+    font-size: 1.35em;
+    padding: 1em;
+    margin: 0 -8px 2em -8px;
+    gap: 2em;
+}
+#footer a {
+    text-decoration: none;
+    color: inherit;
 }
