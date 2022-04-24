@@ -1,0 +1,69 @@
+html {
+    font-family: monospace;
+}
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10em;
+}
+
+#calculator-body {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background-color: blueviolet;
+    width: 20em;
+    height: 100%;
+    gap: 1em;
+    border-radius: 1em;
+}
+
+#screen {
+    width: 99%;
+    border: 2px solid red;
+    height: 7em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+}
+
+.display {
+    flex: 1 1 auto;
+    height: 25%;
+    border: 1px solid black;
+}
+.display.bottom {
+    height: 50%;
+}
+
+.btnrow {
+    display: flex;
+    justify-content: space-between;
+    gap: .75em;
+    border: 2px solid red;
+}
+
+.btnrow button {
+    flex: 1 2 auto;
+    width: 25%;
+    padding: .5em;
+    background-color: aqua;
+    border-radius: .5em;
+    font-size: 1.75rem;
+    text-align: center;
+    font-family: monospace;
+    border: none;
+}
+
+.special.delete {
+    width: 48.5%;
+    flex: 0 0 auto;
+}
+
+.operator.equal {
+    width: 48.5%;
+    flex: 0 0 auto;
+}
