@@ -75,6 +75,10 @@ button {
     box-shadow: -1px 2px 1px 1px var(--dark);
     color: var(--dark);
 }
+button:active {
+    box-shadow: -1px 2px var(--dark);
+    transform: translateY(2px);
+}
 
 .special {
     background-color: var(--bg-accent);
