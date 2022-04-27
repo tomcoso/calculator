@@ -15,7 +15,7 @@ function operate(newOperator) {
             break;
         case 'x' :
             if (current.secondOperand == '0') {
-                current.firstOperand = '0';
+                current.firstOperand = 'no.';
                 break;
             }
             current.firstOperand = +current.firstOperand * +current.secondOperand;
@@ -31,15 +31,31 @@ function operate(newOperator) {
         current.operator = null;
     }
 
-    if (current.operator) 
+    if (current.operator)
     {
-        displayTop.textContent = `${current.firstOperand} ${current.operator}`;
+        if ((current.firstOperand.toString(10)).match(/\./)) 
+        {
+            displayTop.textContent = `${current.firstOperand.toFixed(2)} ${current.operator}`;
+        }
+        else 
+        {
+            displayTop.textContent = `${current.firstOperand} ${current.operator}`;
+        }
+
         displayBottom.textContent = '0';
     }
     else
     {
         displayTop.textContent += ` ${current.secondOperand}`;
-        displayBottom.textContent = current.firstOperand;
+        if ((current.firstOperand.toString(10)).match(/\./))
+        {
+            displayBottom.textContent = current.firstOperand.toFixed(2);
+        }
+        else
+        {
+            displayBottom.textContent = current.firstOperand;
+        }
+
         current.use = true; //so that user can start from zero without using clear
     }
 
@@ -79,9 +95,10 @@ operators.forEach(operator => operator.addEventListener('click', event => {
         current.secondOperand = displayBottom.textContent;
         operate(event.target.textContent);
 
+        if (current.float) delete current.float;
     }
      else 
-     {
+    {
         if (event.target.textContent == '=') return;
 
         if (event.target.textContent == '-' && displayBottom.textContent == '0') 
@@ -97,5 +114,63 @@ operators.forEach(operator => operator.addEventListener('click', event => {
         displayBottom.textContent = '0';
 
         if (current.use) delete current.use;
+        if (current.float) delete current.float;
     }
 }))
+
+//SPECIALS
+const floatBtn = document.querySelector('.float');
+floatBtn.addEventListener('click', () => {
+
+    if (current.float) // So that we can only use one float per operand
+    {
+        return;
+    }
+
+    if (current.use) 
+    {
+        displayBottom.textContent = '0.' ;
+        delete current.use ;
+    }
+    else if (displayBottom.textContent == '0')
+    {
+        displayBottom.textContent = '0.' ;
+    }
+    else
+    {
+        displayBottom.textContent += '.' ;
+    }
+
+    current.float = true
+
+})
+
+const clearBtn = document.querySelector('.clear');
+clearBtn.addEventListener('click', () => {
+
+    displayBottom.textContent = '0' ;
+    displayTop.textContent = '' ;
+
+    current.firstOperand = null;
+    current.operator = null;
+    current.secondOperand = null;
+
+    if (current.use) delete current.use;
+    if (current.float) delete current.float;
+
+})
+
+const delBtn = document.querySelector('.delete');
+delBtn.addEventListener('click', () => {
+    let str = displayBottom.textContent ;
+
+    if (str.length === 1) 
+    {
+        displayBottom.textContent = '0' ;
+    }
+    else
+    {
+        displayBottom.textContent = str.substring(0, str.length-1);
+    }
+
+})
