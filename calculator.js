@@ -93,7 +93,7 @@ function addOperand(event) {
         displayBottom.textContent += event.target.textContent;
     }
 
-    let audio = new Audio('./sounds/buttonsound.wav');
+    let audio = new Audio('/sounds/buttonsound.wav');
     audio.play();
 
 }
@@ -130,7 +130,7 @@ function addOperator(event) {
         if (current.float) delete current.float;
     }
 
-    let audio = new Audio('./sounds/specialsound.wav');
+    let audio = new Audio('/sounds/specialsound.wav');
     audio.play();
 
 }
@@ -160,7 +160,7 @@ function addFloat() {
     }
 
     current.float = true
-    let audio = new Audio('./sounds/buttonsound.wav');
+    let audio = new Audio('/sounds/buttonsound.wav');
     audio.play();
 
 }
@@ -179,7 +179,7 @@ function clear() {
     if (current.use) delete current.use;
     if (current.float) delete current.float;
 
-    let audio = new Audio('./sounds/clearsound.wav');
+    let audio = new Audio('/sounds/clearsound.wav');
     audio.play();
 
 }
@@ -203,7 +203,7 @@ function deleteLast() {
         displayBottom.textContent = str.substring(0, str.length-1);
     }
 
-    let audio = new Audio('./sounds/specialsound.wav');
+    let audio = new Audio('/sounds/specialsound.wav');
     audio.play();
 
 }
@@ -257,7 +257,7 @@ function addOperandKey(event) {
         displayBottom.textContent += event.key;
     }
 
-    let audio = new Audio('./sounds/buttonsound.wav');
+    let audio = new Audio('/sounds/buttonsound.wav');
     audio.play();
 }
 
@@ -300,6 +300,6 @@ function addOperatorKey(event) {
         if (current.float) delete current.float;
     }
 
-    let audio = new Audio('./sounds/specialsound.wav');
+    let audio = new Audio('/sounds/specialsound.wav');
     audio.play();
 }
