@@ -15,7 +15,7 @@ function operate(newOperator) {
             break;
         case 'x' :
             if (current.secondOperand == '0') {
-                current.firstOperand = 'no.';
+                current.firstOperand = 'boobs';
                 break;
             }
             current.firstOperand = +current.firstOperand * +current.secondOperand;
@@ -42,7 +42,7 @@ function operate(newOperator) {
     {
         if ((current.firstOperand.toString(10)).match(/\./)) 
         {
-            displayTop.textContent = `${current.firstOperand.toFixed(2)} ${current.operator}`;
+            displayTop.textContent = `${current.firstOperand.toFixed(3)} ${current.operator}`;
         }
         else 
         {
@@ -56,7 +56,7 @@ function operate(newOperator) {
         displayTop.textContent += ` ${current.secondOperand}`;
         if ((current.firstOperand.toString(10)).match(/\./))
         {
-            displayBottom.textContent = current.firstOperand.toFixed(2);
+            displayBottom.textContent = current.firstOperand.toFixed(3);
         }
         else
         {
