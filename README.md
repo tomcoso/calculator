@@ -31,7 +31,8 @@ When an operator was selected for a second time, the expression above would be s
 
     current.firstOperand = result (e.g '12') ;
     current.operator = new operator (e.g '-') ;        // if new operator is "=" then no value is assigned here
-    current.secondOperand = null    // awaits for second operand and once a new operator is input it assigns it here where it is used in the operate() function
+    current.secondOperand = null    // awaits for second operand and once a new operator is input it assigns it here 
+                                            where it is used in the operate() function
     
 Then each operand would be assigned to each property by adquiring the textContent of the display element on the UI, so the text content on the DOM acted as the input for the current object.
 
