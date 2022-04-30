@@ -19,7 +19,7 @@ Calculator project from https://www.theodinproject.com/lessons/foundations-calcu
 
 ### Planning process
 
-I came up with the idea of using an object to store the operands and the current operator. Once a second operator is chosen it would then solve the expression and assign the result as the first operand and the second operator as the current operator, awaiting for a second operand (unless the seocnd operator was an equal sign):
+I came up with the idea of using an object to store the operands and the current operator. Once a second operator is chosen it would then solve the expression and assign the result as the first operand and the second operator as the current operator, awaiting for a second operand (unless the second operator was an equal sign):
 
     current = {
       firstOperand = '5' ,
@@ -31,9 +31,10 @@ When an operator was selected for a second time, the expression above would be s
 
     current.firstOperand = result (e.g '12') ;
     current.operator = new operator (e.g '-') ;        // if new operator is "=" then no value is assigned here
-    current.secondOperand = null    // awaits for second operand and once a new operator is input it assigns it here
+    current.secondOperand = null    // awaits for second operand and once a new operator is input it assigns it here where it is used in the operate() function
     
 Then each operand would be assigned to each property by adquiring the textContent of the display element on the UI, so the text content on the DOM acted as the input for the current object.
 
 The rest of the work was integrating the html and manipulating the DOM to make everything work together.
 The project is very easy to expand by adding expressions to the operate() function, the most problematic aspect of this would be updating the css and html to add the new buttons.
+It is also possible to add memory features by adding properties to the current object to store previous results or whole operations.
