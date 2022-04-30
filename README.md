@@ -1,7 +1,7 @@
 # calculator
 Calculator project from https://www.theodinproject.com/lessons/foundations-calculator
 
-What I learned:
+###What I learned:
 
 - How to use a global object to store data
 - How important is writing clean code for refactoring and reading
